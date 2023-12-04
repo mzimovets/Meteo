@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+.border-container {
+  background-color: #7effc9;
+  border: 1px solid#a7ffe2;
+  border-radius: 25px;
+  margin: 20px;
+  height: 698px; 
+}
+
+.indicators-cards {
+  background-color: #ECFFF7;
+  border: 1px solid #7effc9;
+  border-radius: 25px;
+  margin: 20px;
+  height: 505px;
+  width: 300px;
+  position: relative;
+  top: 50px;
+  padding-left: 40px;
+}
+
+.cards-title {
+  font-weight: bold;
+  font-size: 30px;
+  text-align:center;
+  padding-top: 5px;
+  padding-right: 50px;
+}
+
+
+@font-face {
+  font-family: Pompadur; /* Гарнитура шрифта */
+  src: url("/public/robotoflex_regular.ttf");
+}
+
+.font-serif {
+font-family: 'Pompadur', serif;
+
+
+
+}
+
+.font-text-area {
+font-family: Font;
+}
+
+.title {
+  /* text-align: center; */
+  margin: 5px;
+  padding-left: 30px;
+  font-weight: bold;
+  font-size: 40px;
+}
