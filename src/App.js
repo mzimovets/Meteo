@@ -31,8 +31,6 @@ function App() {
         mqttSub({ topic: "weather-station", qos: 1 });
 
         console.log("mqtt connect");
-        // const { topic, qos, payload } = context;
-        // client.end();
       });
       client.on("error", (err) => {
         console.error("Connection error: ", err);
@@ -45,12 +43,11 @@ function App() {
       client.on("message", (topic, message) => {
         const payload = { topic, message: message.toString() };
         console.log("mqtt message", payload);
-        // setPayload(payload);
         console.log("payload", payload);
         setMqttData(message.toString());
       });
     }
-  }, [client]); //client
+  }, [client]);
 
   const mqttSub = (subscription) => {
     if (client) {
@@ -61,7 +58,6 @@ function App() {
           return;
         }
         console.log("mqtt subscribe at", subscription);
-        // setIsSub(true);
       });
     }
   };
@@ -79,7 +75,22 @@ function App() {
 
   return (
     <div>
-      {connectionStatus}
+      <div style={{ display: "flex" }}>
+        <div className="connection-status">{connectionStatus}</div>
+        {connectionStatus === "Connected" ? (
+          <img
+            className="signal-png"
+            style={{ paddingLeft: "10px", paddingTop: "9px" }}
+            src={"signal.png"}
+          />
+        ) : (
+          <img
+            className="low-signal-png"
+            style={{ paddingLeft: "10px", paddingTop: "9px" }}
+            src={"low-signal.png"}
+          />
+        )}
+      </div>
       <Meteo mqttData={mqttData} />
     </div>
   );
