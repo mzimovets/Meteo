@@ -38,23 +38,24 @@
 }
 
 .border-container {
-  background-color: #7effc9;
-  border: 1px solid#a7ffe2;
-  border-radius: 25px;
+  background-color: #ffffff;
+  /* border: 1px solid#a7ffe2; */
+  border-radius: 50px;
   margin: 20px;
   height: 698px; 
 }
 
 .indicators-cards {
-  background-color: #ECFFF7;
-  border: 1px solid #7effc9;
-  border-radius: 25px;
+  background-color: #ffffff;
+  /* border: 4px solid #bcbcbc; */
+  border-radius: 50px;
   margin: 20px;
   height: 505px;
   width: 300px;
   position: relative;
   top: 50px;
   padding-left: 40px;
+  box-shadow: 0 0 5px 5px rgb(92, 160, 255);
 }
 
 .cards-title {
@@ -84,8 +85,8 @@ font-family: Font;
 
 .title {
   /* text-align: center; */
-  margin: 5px;
-  padding-left: 30px;
+  padding-top: 20px;
+  padding-left: 25px;
   font-weight: bold;
   font-size: 40px;
 }
