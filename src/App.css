@@ -90,3 +90,31 @@ font-family: Font;
   font-weight: bold;
   font-size: 40px;
 }
+
+.tempIn {
+  padding-top: 150px;
+  padding-left: 86px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.tempOut {
+  padding-top: 150px;
+  padding-left: 90px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.humidity {
+  padding-top: 188px;
+  padding-left: 90px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.barPressure {
+  padding-top: 188px;
+  padding-left: 90px;
+  font-size: 30px;
+  font-weight: bold;
+}

@@ -33,19 +33,19 @@ const Meteo = (props) => {
           <div style={{ display: "flex" }}>
             <div className="indicators-cards">
               <div className="cards-title">Температура внутри</div>
-              <div>{tempIn}°</div>
+              <div className="tempIn">{tempIn} °</div>
             </div>
             <div className="indicators-cards">
               <div className="cards-title">Температура снаружи</div>
-              <div>{tempOut}°</div>
+              <div className="tempOut">{tempOut} °</div>
             </div>
             <div className="indicators-cards">
               <div className="cards-title">Влажность</div>
-              <div>{humidity}%</div>
+              <div className="humidity">{humidity} %</div>
             </div>
             <div className="indicators-cards">
               <div className="cards-title">Давление</div>
-              <div>{barPressure}</div>
+              <div className="barPressure">{barPressure} Hg</div>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import { Meteo } from "./components/Meteo";
 import { useEffect } from "react";
@@ -6,6 +6,7 @@ import mqtt from "mqtt";
 
 function App() {
   const [client, setClient] = useState(null);
+  const clientRef = useRef(null);
   const [connectionStatus, setConnectStatus] = useState("");
   const [mqttData, setMqttData] = useState();
   const mqttConnect = (mqttOption) => {
@@ -15,7 +16,7 @@ function App() {
 
   useEffect(() => {
     mqttConnect({
-      host: "test.mosquitto.org", //"195.161.68.19",
+      host: "test.mosquitto.org",
       port: 8080,
       protocol: "ws",
       clientId: "max1" + new Date(),
@@ -23,14 +24,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // if (connectStatus !== "Connected") {
-    //   mqttConnect({
-    //     host: "192.168.1.96",
-    //     port: 8888,
-    //     protocol: "ws",
-    //     clientId: "asdg1",
-    //   });
-    // }
     if (client) {
       console.log(client);
       client.on("connect", () => {
@@ -39,10 +32,11 @@ function App() {
 
         console.log("mqtt connect");
         // const { topic, qos, payload } = context;
+        // client.end();
       });
       client.on("error", (err) => {
         console.error("Connection error: ", err);
-        // client.end();
+        clientRef.current.end();
       });
       client.on("reconnect", () => {
         console.log("mqtt reconnect");
@@ -54,11 +48,9 @@ function App() {
         // setPayload(payload);
         console.log("payload", payload);
         setMqttData(message.toString());
-        message.toString().split(" ");
-        const paramValue = message.toString().split(" ");
       });
     }
-  }, [client]);
+  }, [client]); //client
 
   const mqttSub = (subscription) => {
     if (client) {
