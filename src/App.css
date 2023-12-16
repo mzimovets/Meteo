@@ -47,7 +47,7 @@
   width: 300px;
   position: relative;
   top: 50px;
-  padding-left: 40px;
+  /* padding-left: 40px; */
   box-shadow: 0 0 5px 5px rgb(92, 160, 255);
 }
 
@@ -56,7 +56,12 @@
   font-size: 30px;
   text-align:center;
   padding-top: 5px;
-  padding-right: 50px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  height: 13rem;
+  
+  /* padding-right: 50px; */
 }
 
 
@@ -83,9 +88,12 @@ font-family: Font;
   font-size: 40px;
 }
 
-.tempIn {
-  padding-top: 150px;
-  padding-left: 100px;
+.temp {
+  /* padding-top: 150px;
+  padding-left: 100px; */
+  width: 80%;
+  margin: auto;
+  text-align: center;
   font-size: 40px;
   font-weight: bold;
 }
