@@ -21,6 +21,12 @@ function App() {
       protocol: "ws",
       clientId: "max1" + new Date(),
     });
+    setTimeout(() => {
+      console.log("timeOut");
+
+      setMqttData("to-");
+      console.log("timeOut");
+    }, 1000);
   }, []);
 
   useEffect(() => {

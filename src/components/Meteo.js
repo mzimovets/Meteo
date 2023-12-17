@@ -33,7 +33,7 @@ const Meteo = (props) => {
       <div className="font-serif">
         <div className="border-container">
           <div className="title">Домашняя метеостанция</div>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div className="indicators-cards">
               <div className="cards-title">Температура снаружи</div>
               <div className="temp">{tempOut} °</div>
